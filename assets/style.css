@@ -1,0 +1,68 @@
+:root
+{
+    --btnColor: rgb(72, 75, 199);
+    --mainBoxTop: rgb(26,13,43);
+    --mainBoxBottom: rgb(200,58,70)
+}
+*
+{
+   font-family: sans-serif;
+}
+
+body
+{
+background-image: url(https://images.hdqwalls.com/download/minimal-sunset-landscape-4k-w5-1920x1080.jpg);
+background-size: cover;
+}
+
+header
+{
+ display: flex;
+ justify-content: space-between;
+}
+
+
+
+.timer p
+{
+    font-size: 150%;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 5px;
+    background-color: var(--btnColor);
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.timer span
+{
+    font-family: 'Oswald', sans-serif;
+}
+
+.navigation
+{
+    font-family: 'Oswald', sans-serif;
+    font-size:150%;
+    margin: 20px;
+    background-color: var(--btnColor);
+    border-radius: 25px;
+
+}
+
+.start
+{   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin: 100px;
+    border-radius: 25px;
+}
+
+.start div
+{
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
+    border-radius: 25px;
+}
+
