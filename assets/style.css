@@ -1,8 +1,8 @@
 :root
 {
     --btnColor: rgb(72, 75, 199);
-    --mainBoxTop: rgb(26,13,43);
-    --mainBoxBottom: rgb(200,58,70)
+    --mainBoxTop: rgb(48, 25, 78);
+    --mainBoxBottom: rgb(200,58,70);
 }
 *
 {
@@ -64,5 +64,23 @@ header
     text-align: center;
     background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
     border-radius: 25px;
+    padding: 10px;
 }
 
+#start
+{
+    width: 200px;
+}
+
+.navigation:hover
+{
+    box-shadow: 2px 2px 2px 1px var(--mainBoxBottom);
+    color: var(--mainBoxBottom);
+}
+
+.navigation:active
+{
+    color: var(--mainBoxBottom);
+    box-shadow: inset 1px 1px 10px var(--mainBoxTop);
+
+}
