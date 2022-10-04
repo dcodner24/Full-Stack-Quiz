@@ -10,28 +10,52 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./assets/style.css">
-        <script src="./assets/script.js" defer></script>
+        
     </head>
     <body>
         <header>
             <a href=hiscore.html id="hbtn"><button class= "navigation">High Scores</button></a>
             <div class="timer">
-                <p>Time: <span>0</span></p>
+                <p>Time: <span id="timeNum">0</span></p>
             </div>
         </header>
-        <main>
-            <div class="start">
-                <div>
+        <main id='root'>
+
+            <section class="start">
+                <div class="page-box">
                     <h1>Coding Quiz Challenge</h1>
                     <p>Try to answer the following code related questions within the time limit. Keep in mind that incorrect answers will impact remaining time and score.</p>
                 </div>
-                
+
                 <button class="navigation" id="start">Start Quiz</button>
+            </section>
+
+            <section class="quiz">
+                <div class="page-box">
+                    <h1 id="question">What does the fox say?</h1>
+
+                    <div>
+                    <button class="navigation answers" id="0" onclick="ansQuestion(this.id)">Ans1</button>
+                    <button class="navigation answers" id="1"onclick="ansQuestion(this.id)">Ans2</button>
+                    <button class="navigation answers" id="2"onclick="ansQuestion(this.id)">Ans3</button>
+                    <button class="navigation" id="3"onclick="ansQuestion(this.id)">Ans4</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class='results'>
+                <div class="page-box">
+                <h2>All done!</h2>
+                <p>Your final score is <span id="score">0</span>.</p>
+                <label for="name">Please enter your initials:</label>
+                <input type="text" id="name">
+                <button class=navigation id="sumbit">Submit</button>
+                </div>
             </div>
         </main>
         
 
-        
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="./assets/script.js"></script>
     </body>
-</html>
+</html>s

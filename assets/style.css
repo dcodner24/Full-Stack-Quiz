@@ -9,16 +9,27 @@
    font-family: sans-serif;
 }
 
-body
+html
 {
-background-image: url(https://images.hdqwalls.com/download/minimal-sunset-landscape-4k-w5-1920x1080.jpg);
-background-size: cover;
+    background-image: url(https://images.hdqwalls.com/download/minimal-sunset-landscape-4k-w5-1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    /* background-position: center; */
 }
 
 header
 {
  display: flex;
  justify-content: space-between;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
 }
 
 
@@ -29,6 +40,7 @@ header
     font-family: 'Oswald', sans-serif;
     margin-right: 5px;
     background-color: var(--btnColor);
+    border: solid 2px black;
     border-radius: 25px;
     padding-left: 20px;
     padding-right: 20px
@@ -54,7 +66,6 @@ header
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     margin: 100px;
     border-radius: 25px;
 }
@@ -67,10 +78,6 @@ header
     padding: 10px;
 }
 
-#start
-{
-    width: 200px;
-}
 
 .navigation:hover
 {
@@ -84,3 +91,66 @@ header
     box-shadow: inset 1px 1px 10px var(--mainBoxTop);
 
 }
+
+.scores
+{
+    display: flex;
+    min-width:50%;
+    min-height: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;    
+    background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
+    border-radius: 25px;
+}
+
+.results
+{   
+   display:none;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    border-radius: 25px;
+}
+
+.results div
+{
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.quiz
+{   
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    border-radius: 25px;
+}
+
+.quiz div
+{
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#start
+{
+    width: 200px;
+}
+
+#ans
+{
+    width: 200px
+}
+
+#hiClear
+{
+    width: 200px;
+}
+
