@@ -154,3 +154,11 @@ main
     width: 200px;
 }
 
+
+.answers{
+    width: 250px;
+}
+
+.question-response{
+    text-align: left;
+}
