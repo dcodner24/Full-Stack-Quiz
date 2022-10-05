@@ -16,7 +16,17 @@ var ansStatus = $('.question-response')
 var secondsLeft = 0;
 var x = 0;
 var secDelay = 0;
-var submitBtn = $('#submit')
+var submitBtn = $('#submit');
+var user = $('#name');
+var finalScore = $('#score')
+var formEl = $('.form');
+var userList = []
+var scoreList = []
+
+localStorage.setItem('users', JSON.stringify(userList));
+localStorage.setItem('scores', JSON.stringify(scoreList));
+
+
 
 
 var questions = [
@@ -91,13 +101,15 @@ function endQuiz(){
     x = 0;
     quizMenu.css('display', 'none')
     recordMenu.css('display','flex');
+    finalScore.text(secondsLeft);
+
 }
 
 function ansQuestion(index){
    
     var response = ''
     var response = questions[x].answers[index];
-    // console.log(x);
+    console.log(x);
     
     if(response === questions[x].correct){
         ansStatus.text('Correct');
@@ -118,12 +130,32 @@ function ansQuestion(index){
     }
 }
 
-// function storeScore(){
+function storeScore(event){
+    event.preventDefault();
+   
+  var nameInput = user.val();
+  userList = JSON.parse(localStorage.getItem('users'));
+  scoreList = JSON.parse(localStorage.getItem('scores'));
 
-// }
+  if (!nameInput) {
+    
+    return;
+  }
+    userList = userList.push(nameInput);
+    
+    scoreList = scoreList.push(secondsLeft);
+
+    localStorage.setItem('users', JSON.stringify(userList));
+    localStorage.setItem('scores', JSON.stringify(scoreList));
+    
+    recordMenu.css('display','none');
+    startMenu.css('display','flex')
+}
+  
+        
 
 function indexChk(){
-    if(x > questions.length){
+    if(x >= questions.length){
         endQuiz();
     }
 
@@ -137,8 +169,7 @@ function indexChk(){
 }
 
 startBtn.on('click',startQuiz);
-
-// submitBtn.on('click',storeScore);
+formEl.on('submit',storeScore);
   
 
 
