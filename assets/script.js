@@ -1,6 +1,4 @@
-
 //Element vars to be manipulated
-var rootEl = $('#root');
 var timerEl = $('#timeNum');
 var startBtn = $('#start');
 var startMenu = $('.start');
@@ -20,12 +18,14 @@ var submitBtn = $('#submit');
 var user = $('#name');
 var finalScore = $('#score')
 var formEl = $('.form');
-var scoreBox = $('names');
-var scores = $('hi-scores');
-var clearScores = $('hiClear');
+var scoreBox = $('.names');
+var scoresBtn = $('#hi-scores');
+var clearScores = $('#hiClear');
 var blankList = [];
 var userList = [];
-var scoreList = []
+var scoreList = [];
+var hsMenu = $('.scores-list');
+var homeBtn = $('#home');
 
 if(JSON.parse(localStorage.getItem('users')) == null || JSON.parse(localStorage.getItem('scores')) == null){
     localStorage.setItem('users', JSON.stringify(userList));
@@ -142,9 +142,7 @@ function storeScore(event){
   userList = JSON.parse(localStorage.getItem('users'));
   scoreList = JSON.parse(localStorage.getItem('scores'));
   console.log(secondsLeft);
-    // console.log()
   if (!nameInput) {
-    
     return;
   }
     userList.push(nameInput);
@@ -156,23 +154,42 @@ function storeScore(event){
     localStorage.setItem('users', JSON.stringify(userList));
     localStorage.setItem('scores', JSON.stringify(scoreList));
     
-    // recordMenu.css('display','none');
-    // startMenu.css('display','flex')
+    recordMenu.css('display','none');
+    startMenu.css('display','flex')
 }
   
 function populateScores(){
+    startMenu.css('display','none');
+    hsMenu.css('display','flex');
+    scoresBtn.css('display','none')
+    homeBtn.css('display','flex')
+    scoreBox.empty();
     userList = JSON.parse(localStorage.getItem('users'));
     scoreList = JSON.parse(localStorage.getItem('scores'));
 
+    console.log(userList);
+    console.log(scoreList);
+
     for(var i=0; i < userList.length; i++) {
         var namesEl = $('<li>');
-        namesEl.text(userList[i], scoreList[i]);
+        namesEl.text(userList[i]+': '+scoreList[i]);
+        namesEl.addClass('score_items');
         scoreBox.append(namesEl);
     }
 }   
 
 function wipeData(){
+    scoreBox.empty();
+    localStorage.setItem('users', JSON.stringify(blankList));
+    localStorage.setItem('scores', JSON.stringify(blankList));
+   
+}
 
+function goHome(){
+    scoresBtn.css('display','flex');    
+    homeBtn.css('display','none');
+    hsMenu.css('display','none');
+    startMenu.css('display','flex');
 }
 
 function indexChk(){
@@ -189,8 +206,9 @@ function indexChk(){
     }
 }
 
-startBtn.on('click',startQuiz);
-formEl.on('submit',storeScore);
-scores.on('click', populateScores)  
-clearScores.on('click',wipeData)
+startBtn.on('click', startQuiz);
+formEl.on('submit', storeScore);
+scoresBtn.on('click', populateScores);
+clearScores.on('click', wipeData);
+homeBtn.on('click',goHome)
 

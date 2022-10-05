@@ -101,8 +101,40 @@ main
     align-items: center;
     justify-content: flex-start;
     margin: 0 auto;    
+    border-radius: 25px;
+    font-size: 150%;
+}
+.scores-list{
+    display: none;
+    min-width:50%;
+    min-height: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;    
     background-image: linear-gradient(to bottom, var(--mainBoxTop), var(--mainBoxBottom));
     border-radius: 25px;
+    font-size: 125%;
+}
+.scores ul{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    list-style-type: none;
+    
+    
+}
+
+.score_items{
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size:150%;
+    margin: 20px;
+    background-color: var(--btnColor);
+    border-radius: 25px;
+    width: 500px;
+    text-align: center;
+
 }
 
 .results
@@ -161,4 +193,17 @@ main
 
 .question-response{
     text-align: left;
+}
+
+.scoresBody{
+    display:hidden;
+
+}
+
+#hi-scores{
+    display:flex;
+}
+
+#home{
+    display: none;
 }

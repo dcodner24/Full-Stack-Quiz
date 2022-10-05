@@ -13,8 +13,10 @@
         
     </head>
     <body>
-        <header>
-            <a href=hiscore.html id="hbtn"><button class= "navigation" id="#hi-scores">High Scores</button></a>
+        <header>    
+        <button class= "navigation" id="hi-scores">High Scores</button>
+        <button class="navigation" id="home">Home</button>
+
             <div class="timer">
                 <p>Time: <span id="timeNum">0</span></p>
             </div>
@@ -46,18 +48,32 @@
 
 
 
-            <div class='results'>
+            <section class='results'>
                 <div class="page-box">
                     <h2>All done!</h2>
                     <p>Your final score is <span id="score">0</span>.</p>
                    
                     <form class="form">
-                    <label for="name">Please enter your initials:</label>   
+                   <label for="name">Please enter your initials:</label>>   
                     <input type="text" id="name">
                     <button class=navigation id="sumbit">Submit</button>
                     </form>
                 </div>
-            </div>
+            </section>
+
+            <section class="scores-list">
+                <div class="scores">
+                    <h1>High Scores</h1>
+                    <ul class="names">
+
+                    </ul>
+                </div>
+                <button class="navigation" id="hiClear">Clear Scores</button>
+            </section>
+
+            
+
+>
         </main>
         
 
