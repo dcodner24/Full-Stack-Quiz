@@ -20,13 +20,17 @@ var submitBtn = $('#submit');
 var user = $('#name');
 var finalScore = $('#score')
 var formEl = $('.form');
-var userList = []
+var scoreBox = $('names');
+var scores = $('hi-scores');
+var clearScores = $('hiClear');
+var blankList = [];
+var userList = [];
 var scoreList = []
 
-localStorage.setItem('users', JSON.stringify(userList));
-localStorage.setItem('scores', JSON.stringify(scoreList));
-
-
+if(JSON.parse(localStorage.getItem('users')) == null || JSON.parse(localStorage.getItem('scores')) == null){
+    localStorage.setItem('users', JSON.stringify(userList));
+    localStorage.setItem('scores', JSON.stringify(scoreList));
+}
 
 
 var questions = [
@@ -134,25 +138,42 @@ function storeScore(event){
     event.preventDefault();
    
   var nameInput = user.val();
+  console.log(nameInput);
   userList = JSON.parse(localStorage.getItem('users'));
   scoreList = JSON.parse(localStorage.getItem('scores'));
-
+  console.log(secondsLeft);
+    // console.log()
   if (!nameInput) {
     
     return;
   }
-    userList = userList.push(nameInput);
+    userList.push(nameInput);
+    console.log(userList)
     
-    scoreList = scoreList.push(secondsLeft);
+    scoreList.push(secondsLeft);
+    console.log(scoreList);
 
     localStorage.setItem('users', JSON.stringify(userList));
     localStorage.setItem('scores', JSON.stringify(scoreList));
     
-    recordMenu.css('display','none');
-    startMenu.css('display','flex')
+    // recordMenu.css('display','none');
+    // startMenu.css('display','flex')
 }
   
-        
+function populateScores(){
+    userList = JSON.parse(localStorage.getItem('users'));
+    scoreList = JSON.parse(localStorage.getItem('scores'));
+
+    for(var i=0; i < userList.length; i++) {
+        var namesEl = $('<li>');
+        namesEl.text(userList[i], scoreList[i]);
+        scoreBox.append(namesEl);
+    }
+}   
+
+function wipeData(){
+
+}
 
 function indexChk(){
     if(x >= questions.length){
@@ -170,6 +191,6 @@ function indexChk(){
 
 startBtn.on('click',startQuiz);
 formEl.on('submit',storeScore);
-  
-
+scores.on('click', populateScores)  
+clearScores.on('click',wipeData)
 
