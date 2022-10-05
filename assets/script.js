@@ -78,6 +78,7 @@ function clock(){
 
 function startQuiz(){
     // Starts timer and presents user with questions and answers
+    scoresBtn.css('display','none');
     secondsLeft= 100;
     x = 0
     timer = setInterval(clock, 1000)
@@ -129,7 +130,7 @@ function ansQuestion(index){
 }
 
 function storeScore(event){
-    event.preventDefault();
+    // event.preventDefault();
    
   var nameInput = user.val();
   console.log(nameInput);
