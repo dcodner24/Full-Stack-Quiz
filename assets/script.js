@@ -41,33 +41,27 @@ var questions = [
     },
 
     {
-        question: "Commonly used data types do NOT include.",
-        answers: ['Strings','Booleans','Alert','Numbers'],
-        correct: 'Alert'
+        question: "The condition in an if/else statement is enclosed within _______.",
+        answers: ['Quotes','Curly-Brackets','Square-Brackets','Parenthesis'],
+        correct: 'Parenthesis'
     },
 
     {
-        question: "Commonly used data types do NOT include.",
-        answers: ['Strings','Booleans','Alert','Numbers'],
-        correct: 'Alert'
+        question: "Arrays in JavaScript can be used to store.",
+        answers: ['Numbers and Strings','Other Arrays','Booleans','All of the Above'],
+        correct: 'All of the Above'
     },
 
     {
-        question: "Commonly used data types do NOT include.",
-        answers: ['Strings','Booleans','Alert','Numbers'],
-        correct: 'Alert'
+        question: "String values must be enclosed within _______ when being assigned to variables.",
+        answers: ['Single Quotes','Double Quotes','Commas','Periods'],
+        correct: 'Double Quotes'
     },
 
     {
-        question: "Commonly used data types do NOT include.",
-        answers: ['Strings','Booleans','Alert','Numbers'],
-        correct: 'Alert'
-    },
-
-    {
-        question: "Commonly used data types do NOT include.",
-        answers: ['Strings','Booleans','Alert','Numbers'],
-        correct: 'Alert'
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answers: ['JavaScript','Terminal Bash','for loops','console.log()'],
+        correct: 'console.log()'
     }
 ]
 
